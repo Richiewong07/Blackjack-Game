@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blackjack</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="blackjack.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('#deal-button').click(function() {
+        $('#dealer-hand').append('<img src="images/ace_of_hearts.png" width=10% height=10%>').append('<img src="images/king_of_hearts.png" width=10% height=10%>');
+        $('#player-hand').append('<img src="images/ace_of_diamonds.png" width=10% height=10%>').append('<img src="images/king_of_diamonds.png" width=10% height=10%>');
+      });
+      $('#hit-button').click(function() {
+        $('#dealer-hand').append('<img src="images/2_of_clubs.png" width=10% height=10%>');
+        $('#player-hand').append('<img src="images/2_of_spades.png" width=10% height=10%>');
+      });
+    });
+    </script>
+  </head>
+
+  <body>
+    <h1>Black Jack Game!</h1>
+
+
+    <div id="table">
+      <div id="messages"></div>
+      <label>Dealer: </label>
+      <label id="dealer-points" class="points"></label>
+      <div id="dealer-hand" class="hand"></div>
+
+      <label>Player: </label>
+      <label id="player-points" class="points"></label>
+      <div id="player-hand" class="hand"></div>
+
+      <div class="buttons">
+        <button id="deal-button">Deal</button>
+        <button id="hit-button">Hit</button>
+        <button id="stand-button">Stand</button>
+        <button id="play-again">Play Again</button>
+      </div>
+    </div>
+  </body>
+</html>
